@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [11, 22, 33, 44, 12, 23, 17, 32, 46, 35];
+
+    // for (let i = 1; i < a.length; i++) {
+    //     if (a[i] > a[i - 1]) {
+    //         document.write("Phần tử " + a[i] + " lớn hơn phần tử " + a[i - 1] + "<br>");
+    //     }
+    // }
+
+
+
+    // let kiemtra = true
+    // for (let i = 1; i < a.length; i++) {
+    //     if (a[i] <= a[i - 1]) {
+    //         kiemtra = false;
+    //         break;
+    //     }
+    // }
+    // if (kiemtra) {
+    //     document.write(" tăng dần")
+    // } else {
+    //     document.write("k tăng dần")
+    //
+    // }
+
+    // let n=+prompt(" nhập giá trị cho trươc")
+    // let check=false
+    // document.write("Các phần tử có tổng bằng "+n+" là "+'<br>')
+    // for (i=0;i<a.length;i++){
+    //   for(j=i+1;j<a.length;j++){
+    //       if(a[i]+a[j]===n){
+    //           document.write(a[i]+" + "+a[j]+' = '+n+'<br>')
+    //           check=true;
+    //       }
+    //   }
+    // }if (!check){
+    //     document.write("không có cặp phần tử nào tổng = "+n)
+    // }
+
+
+//     let n = 8
+//     let b=[2,3,4,4,2,1,3,1]
+//     let tong=0
+//     for(i=0;i<b.length;i++){
+//         tong+=b[i]
+//     }
+// let sobanh=tong/4
+//     document.write('so banh chia cho '+n+' nhóm là : '+Math.ceil(sobanh))
+
+    let n = 8;
+    let b = [2, 3, 4, 4, 2, 1, 3, 1];
+    let banh = 0;
+    let nhom = 0;
+
+    for (let i = 0; i < b.length - 1; i++) {
+        for (let j = i + 1; j < b.length; j++) {
+            if (b[i] < b[j]) {
+                let giamdan = b[i];
+                b[i] = b[j];
+                b[j] = giamdan;
+            }
+        }
+    }
+
+    for (let i = 0; i < b.length; i++) {
+        if (b[i] === 1) {
+            nhom += b[i];
+        } else if (nhom + b[i] <= 4) {
+            nhom += b[i];
+        } else {
+            banh += 1;
+            nhom = b[i];
+        }
+    }
+
+    if (nhom > 0) {
+        banh += 1;
+    }
+
+    document.write(banh);
+
+</script>
+</body>
+</html>
